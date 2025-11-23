@@ -131,7 +131,7 @@ const intervalMs = 150;
 
 function loop(ts) {
   if (ts - lastTick >= intervalMs) {
-    render(); // synchronous
+    render();
     lastTick = ts;
   }
   requestAnimationFrame(loop);
