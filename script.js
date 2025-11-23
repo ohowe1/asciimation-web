@@ -138,6 +138,13 @@ function loop(ts) {
 }
 
 async function init() {
+  // for embedding on my main site
+  const params = new URLSearchParams(window.location.search);
+  const color = params.get('color');
+  if (color) {
+    animationP.style.color = color;
+  }
+
   for (let spriteConfig of SPRITES_CONFIG) {
     const sprite = await loadSprite(spriteConfig);
     sprites.push(sprite);
